@@ -1,0 +1,10 @@
+google-genai
+tavily-python
+python-dotenv
+pydantic
+streamlit
+pandas
+markdown
+reportlab
+requests
+beautifulsoup4
