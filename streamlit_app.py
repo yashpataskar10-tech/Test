@@ -2,14 +2,22 @@ import time
 import pandas as pd
 import streamlit as st
 
-from agents.orchestrator import ConsultantOrchestrator
-
 st.set_page_config(
     page_title="Agentic AI Strategy Consultant",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+try:
+    from agents.orchestrator import ConsultantOrchestrator
+except ValueError as error:
+    st.error(str(error))
+    st.info(
+        "Open Manage app > Settings > Secrets in Streamlit Cloud and add "
+        "GEMINI_API_KEY and TAVILY_API_KEY, then reboot the app."
+    )
+    st.stop()
 
 # ==========================================================
 # SIDEBAR
